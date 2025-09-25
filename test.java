@@ -9,10 +9,7 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
-/**
- * LostLinkPresentationUI - with placeholders, dark headlines on light cards,
- * and image upload preview support.
- */
+
 public class LostLinkPresentationUI extends JFrame {
     private CardLayout cardLayout;
     private JPanel mainPanel;
@@ -66,9 +63,7 @@ public class LostLinkPresentationUI extends JFrame {
         }
     }
 
-    // ---------- Utility ----------
-
-    // Placeholder support
+    
     private void addPlaceholder(JTextComponent field, String placeholder) {
         field.setForeground(Color.GRAY);
         field.setText(placeholder);
@@ -91,7 +86,7 @@ public class LostLinkPresentationUI extends JFrame {
         });
     }
 
-    // Image upload with preview
+    
     private void setupImageUpload(JButton uploadBtn, JPanel parent) {
         uploadBtn.addActionListener(e -> {
             JFileChooser chooser = new JFileChooser();
@@ -104,7 +99,6 @@ public class LostLinkPresentationUI extends JFrame {
                         Image scaled = img.getScaledInstance(120, 120, Image.SCALE_SMOOTH);
                         JLabel preview = new JLabel(new ImageIcon(scaled));
                         preview.setBorder(BorderFactory.createLineBorder(Color.GRAY, 1));
-                        // ensure parent uses BorderLayout or wraps preview placement
                         parent.add(preview, BorderLayout.EAST);
                         parent.revalidate();
                         parent.repaint();
@@ -117,7 +111,6 @@ public class LostLinkPresentationUI extends JFrame {
         });
     }
 
-    // Rounded panel
     private static class RoundedPanel extends JPanel {
         private Color bg;
         private int radius;
@@ -521,3 +514,4 @@ public class LostLinkPresentationUI extends JFrame {
         });
     }
 }
+
